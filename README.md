@@ -10,3 +10,6 @@ https://docred.medium.com/audio-watermarking-fun-with-python-pydub-and-ffmpeg-42
 
 Novel secured scheme for blind audio/speech norm-space watermarking by Arnold algorithm - Slami Saadi, Ahmed Merrad, Ali Benziane
 https://www.sciencedirect.com/science/article/pii/S016516841830272X
+
+Digital_Audio_Watermarking- - ACallglad
+https://github.com/ACallglad/Digital_Audio_Watermarking-/tree/main
