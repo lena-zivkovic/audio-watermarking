@@ -16,3 +16,5 @@ https://github.com/ACallglad/Digital_Audio_Watermarking-/tree/main
 
 Twenty years of audio watermarking - a comprehensive review - Guang Hua, Jiwu Huang, Yun Q. Shi, Jonathan Goh, Vrizlynn L.L. Thing
 https://www.sciencedirect.com/science/article/pii/S0165168416300263#abs0015
+
+A survet: Digital audio watermarking techniques and applications - Sanjay Pratap Singh Chauhan, S. A. M. Rizvi
