@@ -8,7 +8,6 @@
 
 import numpy as np
 from scipy.io.wavfile import read, write
-import argparse
 
 
 #
@@ -31,31 +30,40 @@ def embed_watermark(audio_file, output_filename, watermark):
 
     modified_audio = np.packbits(audio_binary).view(np.int16)
     write(output_filename, sample_rate, modified_audio)
-    # make this so it outputs the watermarked file so u can call export in main.
 
 
 #
 # code for extracting the watermark
-# def extract_watermark()
-# TODO
+def extract_watermark(audio_file, watermark_length):
+    sample_rate, audio = read(audio_file)
 
+    if audio.dtype != np.int16:
+        raise ValueError("Audio file must be in 16-bit format.")
 
-#
-# print the extracted watermark
-# def print_watermark()
-# TODO
+    if len(audio.shape) > 1:
+        audio = audio[:, 0]
+
+    audio_binary = np.unpackbits(audio.view(np.uint8))
+    extracted_bits = audio_binary[:watermark_length*8]
+
+    watermark = ''.join(
+            chr(int(''.join(str(bit) for bit in extracted_bits[i:i+8]), 2))
+            for i in range(0, len(extracted_bits), 8)
+    )
+    return watermark
 
 
 def main():
-    def get_input():
     audio_file = input("Enter the name of the audio file to process: ")
     watermark = input("Enter the watermark: ")
-    tag = input("Enter w to watermark the file or e to extract a watermark from the file")
+    tag = input("Enter w to watermark the file or e to extract a watermark from the file: ")
     if tag == 'w':
-        output_filename = input("Enter the name for the output audio file: ")
+        output_filename = "Watermarked_" + audio_file
         embed_watermark(audio_file, output_filename, watermark)
+        print("Audio file watermarked.")
     elif tag == 'e':
-        # extract
+        extracted = extract_watermark(audio_file, len(watermark))
+        print(f"Extracted watermark: {extracted}")
     else: exit(1)
 
 if __name__ == "__main__":
