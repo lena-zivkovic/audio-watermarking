@@ -8,7 +8,7 @@
 
 import numpy as np
 from scipy.io.wavfile import read, write
-
+import argparse
 
 #
 # LSB algo for adding a watermark
@@ -54,17 +54,23 @@ def extract_watermark(audio_file, watermark_length):
 
 
 def main():
-    audio_file = input("Enter the name of the audio file to process: ")
-    watermark = input("Enter the watermark: ")
-    tag = input("Enter w to watermark the file or e to extract a watermark from the file: ")
-    if tag == 'w':
-        output_filename = "Watermarked_" + audio_file
-        embed_watermark(audio_file, output_filename, watermark)
-        print("Audio file watermarked.")
-    elif tag == 'e':
-        extracted = extract_watermark(audio_file, len(watermark))
+    parser = argparse.ArgumentParser(description="Audio Watermarking Tool")
+    parser.add_argument("audio_file", type=str, help="The name of the audio file to process.")
+    parser.add_argument("tag", type=str, choices=["w", "e"], help="'w' to watermark or 'e' to extract a watermark.")
+    parser.add_argument("watermark", type=str, help="The watermark string for embedding or length for extraction.")
+    args = parser.parse_args()
+
+    if args.tag == 'w':
+        output_filename = input("Enter the name for the output watermarked file: ")
+        output_filename += ".wav"
+        embed_watermark(args.audio_file, output_filename, args.watermark)
+        print(f"Audio file watermarked and saved as '{output_filename}'.")
+    elif args.tag == 'e':
+        extracted = extract_watermark(args.audio_file, len(args.watermark))
         print(f"Extracted watermark: {extracted}")
-    else: exit(1)
+    else:
+        print("Invalid tag. Use 'w' to watermark or 'e' to extract.")
+        exit(1)
 
 if __name__ == "__main__":
     main()
