@@ -1,4 +1,34 @@
-# audio-watermarking
+# Audio Watermarking with the LSB Technique
+
+## Introduction
+
+## What is LSB Audio Watermarking
+
+### Advantages
+
+### Limitations
+
+## Program Introduction
+
+### Program Features
+
+### How it Works
+
+## Usage
+
+### Dependencies
+
+### Command-Line Interface
+
+### Embedding a Watermark into a .wav file
+
+### Extracting the Watermark from a .wav file
+
+## Example
+
+### Embedding
+
+### Extraction
 
 
 # sources

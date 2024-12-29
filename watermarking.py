@@ -5,14 +5,12 @@
 # watermarking.py: Embeding a watermark into an audio file using the LSB method
 #
 
-
 import numpy as np
 from scipy.io.wavfile import read, write
 import argparse
 
 #
 # LSB algo for adding a watermark
-#
 def embed_watermark(audio_file, output_filename, watermark):
     sample_rate, audio = read(audio_file)
 
@@ -74,3 +72,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
