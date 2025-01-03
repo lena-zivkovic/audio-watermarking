@@ -1,6 +1,24 @@
 # Audio Watermarking with the LSB Technique
 
+This project demonstrates how to embed and extract watermarks from audio files using the Least Significant Bit (LSB) technique.
+
 ## Introduction
+
+The rapid growth of audio content through streaming platforms, social media, and digital distribution channels, has forever changed how we create, share, and consume media. However, this widespread accessibility has also introduced significant challenges, such as copyright infringement, unauthorized reproduction, and illegal distribution. Various solutions have emerged to address these issues, one of them being digital audio watermarking which focuses on embedding copyright details, ownership identifiers, or authentication codes within an audio signal.
+
+### Digital Audio Watermarking
+
+Digital audio watermarking is a process of embedding hidden data, known as a watermark, into an audio file without compromising its perceptual quality. Unlike metadata, which is external to the file and can be easily removed or modified, a watermark is integrated directly into the audio content, making it a more resilient and secure method of embeding information.
+
+### How Does it Work
+
+Audio watermarking involves altering specific properties of the audio signal to encode the watermark. These alterations are designed to be:
+
+- Imperceptible: The changes should be inaudible to the human ear, ensuring the audio quality remains intact.
+- Robust: The watermark must resist common audio processing operations like compression, filtering, or format conversion.
+- Secure: The embedded data should be difficult to remove or modify without degrading the audio signal significantly.
+
+There are several techniques for implementing digital audio watermarking, including time-domain methods, frequency-domain methods, and Least Significant Bit (LSB) modification.
 
 ## What is LSB Audio Watermarking
 
