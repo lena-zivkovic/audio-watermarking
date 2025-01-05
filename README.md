@@ -48,13 +48,13 @@ This program provides an implementation of LSB audio watermarking. Users can emb
 
 ### How it Works
 
-1. Embedding
+**1. Embedding**
 - The audio file is read, and its samples are converted into binary format.
 - The watermark is converted into binary (ASCII representation).
 - The least significant bits of the audio samples are replaced with the bits of the watermark.
 - The modified audio data is saved to a new .wav file.
 
-2. Extraction
+**2. Extraction**
 - The watermarked file is read, and the least significant bits of the samples are extracted.
 - These bits are grouped into bytes and converted back into characters.
 - The reconstructed watermark is returned as output.
@@ -68,7 +68,7 @@ This program provides an implementation of LSB audio watermarking. Users can emb
 
 ### Command-Line Interface
 
-1. Embedding a Watermark into a .wav file
+**1. Embedding a Watermark into a .wav file**
 
 - Run the program with the following command:
 > python3 watermarking.py \<audio_file\> w \<watermark\>
@@ -83,7 +83,7 @@ Example:
 Output:
 - A watermarked .wav file with the watermark embedded
 
-2. Extracting the Watermark from a .wav file
+**2. Extracting the Watermark from a .wav file**
 
 - Run the program with the following command:
 > python3 watermarking.py \<audio_file\>e \<watermark\>
