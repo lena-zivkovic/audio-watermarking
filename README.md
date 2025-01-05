@@ -22,7 +22,7 @@ There are several techniques for implementing digital audio watermarking, includ
 
 ## What is LSB Audio Watermarking
 
-The Least Significant Bit (LSB) technique is a method of hiding data within an audio file by altering the least significant bit of each audio sample. Since these bits have minimal impact on the overall quality of the audio, this technique is a popular choice for embedding watermarks or covert messages.
+The Least Significant Bit (LSB) technique is one of the simplest and most widely used methods for audio watermarking. It operates directly on the audio samples in the time domain. By modifying the least significant bits of the audio signal, the LSB method embeds watermark data while maintaining the perceptual quality of the audio.
 
 ### Advantages
 
@@ -38,26 +38,86 @@ The Least Significant Bit (LSB) technique is a method of hiding data within an a
 
 ## Program Introduction
 
+This program provides an implementation of LSB audio watermarking. Users can embed a text-based watermark into .wav files and later extract the watermark from watermarked files. The program is designed with simplicity and efficiency in mind, using Python and libraries NumPy and SciPy.
+
 ### Program Features
 
+- Embed a text-based watermark into a .wav audio file using the LSB technique.
+- Extract a watermark from a watermarked .wav file.
+- support for customizable output filenames
+
 ### How it Works
+
+1. Embedding
+- The audio file is read, and its samples are converted into binary format.
+- The watermark is converted into binary (ASCII representation).
+- The least significant bits of the audio samples are replaced with the bits of the watermark.
+- The modified audio data is saved to a new .wav file.
+
+2. Extraction
+- The watermarked file is read, and the least significant bits of the samples are extracted.
+- These bits are grouped into bytes and converted back into characters.
+- The reconstructed watermark is returned as output.
 
 ## Usage
 
 ### Dependencies
 
+- Python 3.12.3
+- Libraries: NumPy, SciPy
+
 ### Command-Line Interface
 
-### Embedding a Watermark into a .wav file
+1. Embedding a Watermark into a .wav file
 
-### Extracting the Watermark from a .wav file
+- Run the program with the following command:
+> python3 watermarking.py \<audio_file\> w \<watermark\>
+
+- You will be prompted to enter the name of the output file.
+
+---
+Example:
+> python3 watermarking.py input.wav w "HelloWorld"
+---
+
+Output:
+- A watermarked .wav file with the watermark embedded
+
+2. Extracting the Watermark from a .wav file
+
+- Run the program with the following command:
+> python3 watermarking.py \<audio_file\>e \<watermark\>
+
+- The program will extract the watermark from the audio file.
+
+---
+Example:
+> python3 watermarking.py input.wav w "HelloWorld"
+---
+
+Output:
+- The extracted watermark displayed in the console.
 
 ## Example
 
 ### Embedding
 
+Command:
+> python3 watermarking.py input.wav w "Secret"
+
+User input for output file:
+> Enter the name for the output watermarked file: output
+
+Result:
+- The watermark "Secret" is embedded into output.wav
+
 ### Extraction
 
+Command:
+> python3 watermarking.py output.wav e "Secret"
+
+Result:
+- The extracted watermark matches the length of the provided input watermark, returning the corresponding portion of the embedded date.
 
 # sources
 MP3 Audio Watermarking - Tianruo Sun, Lihao Yang, Zimo Cheng
