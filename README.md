@@ -72,17 +72,15 @@ This program provides an implementation of LSB audio watermarking. Users can emb
 
 - Run the program with the following command:
 <code>
-    python3 watermarking.py \<audio_file\> w \<watermark\>
+    python3 watermarking.py <audio_file> w <watermark>
 </code>
 
 - You will be prompted to enter the name of the output file.
 
----
 Example:
 <code>
     python3 watermarking.py input.wav w "HelloWorld"
 </code>
----
 
 Output:
 - A watermarked .wav file with the watermark embedded
@@ -91,17 +89,15 @@ Output:
 
 - Run the program with the following command:
 <code>
-    python3 watermarking.py \<audio_file\>e \<watermark\>
+    python3 watermarking.py <audio_file> e <watermark>
 </code>
 
 - The program will extract the watermark from the audio file.
 
----
 Example:
 <code>
     python3 watermarking.py input.wav w "HelloWorld"
 </code>
----
 
 Output:
 - The extracted watermark displayed in the console.
