@@ -68,32 +68,36 @@ This program provides an implementation of LSB audio watermarking. Users can emb
 
 ### Command-Line Interface
 
-**1. Embedding a Watermark into a .wav file**
+#### 1. Embedding a Watermark into a .wav file
 
 - Run the program with the following command:
-<code>python3 watermarking.py \<audio_file> w \<watermark>
-</code>
+```bash
+python3 watermarking.py \<audio_file> w \<watermark>
+```
 
 - You will be prompted to enter the name of the output file.
 
 **Example:**
-<code>python3 watermarking.py input.wav w "HelloWorld"
-</code>
+```bash
+python3 watermarking.py input.wav w "HelloWorld"
+```
 
 Output:
 - A watermarked .wav file with the watermark embedded
 
-**2. Extracting the Watermark from a .wav file**
+#### 2. Extracting the Watermark from a .wav file
 
 - Run the program with the following command:
-<code>python3 watermarking.py \<audio_file> e \<watermark>
-</code>
+```bash
+python3 watermarking.py \<audio_file> e \<watermark>
+```
 
 - The program will extract the watermark from the audio file.
 
 **Example:**
-<code>python3 watermarking.py input.wav w "HelloWorld"
-</code>
+```bash
+python3 watermarking.py input.wav w "HelloWorld"
+```
 
 Output:
 - The extracted watermark displayed in the console.
@@ -103,11 +107,14 @@ Output:
 ### Embedding
 
 Command:
-<code>python3 watermarking.py input.wav w "Secret"
-</code>
+```bash
+python3 watermarking.py input.wav w "Secret"
+```
 
 User input for output file:
-> Enter the name for the output watermarked file: output
+```bash
+Enter the name for the output watermarked file: output
+```
 
 Result:
 - The watermark "Secret" is embedded into output.wav
@@ -115,8 +122,9 @@ Result:
 ### Extraction
 
 Command:
-<code>python3 watermarking.py output.wav e "Secret"
-</code>
+```bash
+python3 watermarking.py output.wav e "Secret"
+```
 
 Result:
 - The extracted watermark matches the length of the provided input watermark, returning the corresponding portion of the embedded date.
